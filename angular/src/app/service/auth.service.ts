@@ -4,12 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-
+  members = [
+    {name: 'hai', psw: '123123'},
+  ];
   constructor() { }
 
   login(account) {
-    if (account.name === 'hai' && account.psw === '123123') {
-      return true;
+    for (const member of this.members) {
+      if (member.name === account.name && member.psw === account.psw) {
+        return true;
+      }
     }
     return false;
   }
