@@ -12,7 +12,6 @@ import { GroupMessengerComponent } from './group-messenger/group-messenger.compo
   declarations: [
     AppComponent,
     InviteFormComponent,
-    ListMemberComponent
     GroupMessengerComponent  ],
     imports: [
         BrowserModule,
