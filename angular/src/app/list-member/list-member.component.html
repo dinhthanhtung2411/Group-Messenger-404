@@ -1,1 +1,16 @@
-<p>list-member works!</p>
+<div class="card-body contacts_body">
+  <ul class="contacts">
+    <li class="active" *ngFor="let member of members">
+      <div class="d-flex bd-highlight">
+        <div class="img_cont">
+          <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+          <span class="online_icon"></span>
+        </div>
+        <div class="user_info">
+          <span>{{ member.name }}</span>
+          <p>{{ member.name }} is online</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

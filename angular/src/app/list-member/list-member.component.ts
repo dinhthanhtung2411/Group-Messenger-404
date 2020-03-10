@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {AuthService} from '../service/auth.service';
 
 @Component({
   selector: 'app-list-member',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-member.component.css']
 })
 export class ListMemberComponent implements OnInit {
+  @Input() members: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private authService: AuthService
+  ) {
   }
 
+  ngOnInit(): void {
+    this.members = this.authService.members;
+  }
 }
+
