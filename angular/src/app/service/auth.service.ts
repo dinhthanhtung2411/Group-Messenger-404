@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IMembers } from '../members';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class AuthService {
     {name: 'hai', psw: '123123'},
   ];
 
-  constructor() { }
+  constructor(
+    private route: Router
+  ) { }
 
   login(account) {
     for (const member of this.members) {
@@ -22,6 +25,8 @@ export class AuthService {
   }
 
   register(member) {
+    console.log(member);
     this.members.push(member);
+    this.route.navigate(['login']);
   }
 }
