@@ -24,5 +24,4 @@ export class AuthService {
   register(member) {
     this.members.push(member);
   }
-
 }
