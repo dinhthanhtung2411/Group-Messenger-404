@@ -9,6 +9,8 @@ import { ListMemberComponent } from './list-member/list-member.component';
 import { GroupMessengerComponent } from './group-messenger/group-messenger.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
+import { ListChatComponent } from './list-chat/list-chat.component';
+import { ChatFormComponent } from './chat-form/chat-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { SearchComponent } from './search/search.component';
     GroupMessengerComponent,
     RegisterComponent,
     ListMemberComponent,
-    SearchComponent  ],
+    SearchComponent,
+    ListChatComponent,
+    ChatFormComponent  ],
     imports: [
         BrowserModule,
         AppRoutingModule,
