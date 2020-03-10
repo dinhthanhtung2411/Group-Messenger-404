@@ -17,7 +17,6 @@ export class InviteFormComponent implements OnInit {
   }
 
   onSubmit(valueForm) {
-    console.log(valueForm.name);
     if (this.authService.login(valueForm)) {
       this.route.navigate(['/']);
     }
