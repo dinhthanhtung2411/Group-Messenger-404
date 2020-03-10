@@ -17,4 +17,8 @@ export class AuthService {
     }
     return false;
   }
+
+  register(account) {
+    this.members.push(account);
+  }
 }
