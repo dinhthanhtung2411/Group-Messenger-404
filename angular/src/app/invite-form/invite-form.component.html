@@ -1,9 +1,13 @@
 <div id="container">
-  <h2>Invite to our chat</h2>
+  <h2>Join to our chat</h2>
   <p>Set your nick name in group message</p>
-  <form ngForm="formInvite" (ngSubmit)="onSubmit(formInvite.value)">
-    <input type="text" placeholder="Type your nickname" required>
-    <br>
-    <button>Invite</button>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-group">
+      <input ngModel type="text" placeholder="Type your nickname" required name="name">
+    </div>
+    <div class="form-group">
+      <input ngModel type="password" placeholder="Type your password" name="psw">
+    </div>
+    <button type="submit">Join us</button>
   </form>
 </div>
