@@ -1,7 +1,7 @@
 <div id="container">
   <h2>Invite to our chat</h2>
   <p>Set your nick name in group message</p>
-  <form ngForm="formInvite" (ngSubmit)="onSubmit(formInvite.value)">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
     <input type="text" placeholder="Type your nickname" required>
     <br>
     <button>Invite</button>
