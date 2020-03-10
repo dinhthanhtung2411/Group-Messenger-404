@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../service/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-invite-form',
@@ -8,13 +9,17 @@ import {AuthService} from '../service/auth.service';
 })
 export class InviteFormComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private route: Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(valueForm) {
     console.log(valueForm.name);
-    this.authService.login(valueForm);
+    if (this.authService.login(valueForm)) {
+      this.route.navigate(['/']);
+    }
   }
 }
