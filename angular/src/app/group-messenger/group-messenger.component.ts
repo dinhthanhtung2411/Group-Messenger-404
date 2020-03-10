@@ -19,6 +19,5 @@ export class GroupMessengerComponent implements OnInit {
     this.members = this.authService.members.filter( res => {
       return res.name.toLowerCase().match(keyword.toLowerCase());
     });
-    console.log(keyword, this.members);
   }
 }

@@ -16,6 +16,7 @@ import { SearchComponent } from './search/search.component';
     InviteFormComponent,
     GroupMessengerComponent,
     RegisterComponent,
+    ListMemberComponent,
     SearchComponent  ],
     imports: [
         BrowserModule,
