@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
+import { IMembers } from '../members';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
   members = [
     {name: 'hai', psw: '123123'},
   ];
+
   constructor() { }
 
   login(account) {
@@ -17,4 +20,9 @@ export class AuthService {
     }
     return false;
   }
+
+  register(member) {
+    this.members.push(member);
+  }
+
 }
