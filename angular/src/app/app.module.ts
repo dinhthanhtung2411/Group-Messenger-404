@@ -7,12 +7,14 @@ import { InviteFormComponent } from './invite-form/invite-form.component';
 import {FormsModule} from '@angular/forms';
 import { ListMemberComponent } from './list-member/list-member.component';
 import { GroupMessengerComponent } from './group-messenger/group-messenger.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InviteFormComponent,
-    GroupMessengerComponent  ],
+    GroupMessengerComponent,
+    RegisterComponent  ],
     imports: [
         BrowserModule,
         AppRoutingModule,
