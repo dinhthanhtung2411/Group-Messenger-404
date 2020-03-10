@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { IMembers } from '../members';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  members = [];
 
   constructor() { }
 
@@ -13,4 +15,9 @@ export class AuthService {
     }
     return false;
   }
+
+  register(member) {
+    this.members.push(member);
+  }
+
 }
