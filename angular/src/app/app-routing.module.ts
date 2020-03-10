@@ -12,6 +12,9 @@ const routes: Routes = [];
     {
       path: 'login',
       component: InviteFormComponent
+    }, {
+      path: 'register',
+      component: RegisterComponent
     },
     {
       path: 'register',
