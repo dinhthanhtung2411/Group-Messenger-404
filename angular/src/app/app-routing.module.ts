@@ -17,6 +17,10 @@ const routes: Routes = [];
       component: RegisterComponent
     },
     {
+      path: 'register',
+      component: RegisterComponent
+    },
+    {
       path: '',
       component: GroupMessengerComponent,
       pathMatch: 'full'
