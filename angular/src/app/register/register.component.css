@@ -87,3 +87,6 @@ body {
 }
 #container button:hover{transform: translatey(2px);}
 #container button:active{transform: translatey(5px);}
+button[type=submit]:disabled {
+  color: #7d7d7d!important;
+}
