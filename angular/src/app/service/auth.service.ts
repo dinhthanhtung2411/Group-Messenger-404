@@ -6,7 +6,8 @@ import {Router} from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
+  isAuth = false;
+  message = '';
   members = [
     {name: 'hai', psw: '123123'},
   ];
@@ -18,6 +19,7 @@ export class AuthService {
   login(account) {
     for (const member of this.members) {
       if (member.name === account.name && member.psw === account.psw) {
+        this.isAuth = true;
         return true;
       }
     }
@@ -27,6 +29,11 @@ export class AuthService {
   register(member) {
     console.log(member);
     this.members.push(member);
+    this.route.navigate(['login']);
+  }
+
+  logout(): void {
+    this.isAuth = false;
     this.route.navigate(['login']);
   }
 }
