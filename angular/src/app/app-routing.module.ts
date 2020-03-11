@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {InviteFormComponent} from './invite-form/invite-form.component';
 import {GroupMessengerComponent} from './group-messenger/group-messenger.component';
 import {RegisterComponent} from './register/register.component';
+import {AuthGuard} from './auth/auth.guard';
 
 
 const routes: Routes = [];
@@ -17,12 +18,9 @@ const routes: Routes = [];
       component: RegisterComponent
     },
     {
-      path: 'register',
-      component: RegisterComponent
-    },
-    {
       path: '',
       component: GroupMessengerComponent,
+      canActivate: [AuthGuard],
       pathMatch: 'full'
     }
   ])],

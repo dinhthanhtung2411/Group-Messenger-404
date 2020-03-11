@@ -1,6 +1,7 @@
 <div id="container">
   <h2>Join to our chat</h2>
   <p>Set your nick name in group message</p>
+  <div class="text-danger" *ngIf="message">{{ message }}</div>
   <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
     <div class="form-group">
       <input ngModel type="text" placeholder="Type your nickname" required name="name">
