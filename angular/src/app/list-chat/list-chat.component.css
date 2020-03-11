@@ -19,6 +19,7 @@
 }
 .msg_card_body{
   overflow-y: auto;
+  height: 300px;
 }
 .card-header{
   border-radius: 15px 15px 0 0 !important;

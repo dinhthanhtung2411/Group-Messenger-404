@@ -7,7 +7,8 @@ import {Router} from '@angular/router';
 })
 export class AuthService {
   isAuth = false;
-  message = '';
+  message: string;
+  auth: object;
   members = [
     {name: 'hai', psw: '123123'},
   ];
@@ -20,6 +21,7 @@ export class AuthService {
     for (const member of this.members) {
       if (member.name === account.name && member.psw === account.psw) {
         this.isAuth = true;
+        this.auth = member;
         return true;
       }
     }
@@ -34,6 +36,7 @@ export class AuthService {
 
   logout(): void {
     this.isAuth = false;
+    this.auth = {};
     this.route.navigate(['login']);
   }
 }

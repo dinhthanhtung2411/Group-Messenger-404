@@ -17,9 +17,10 @@ export class InviteFormComponent implements OnInit {
     this.message = this.authService.message;
   }
 
-  onSubmit(valueForm) {
-    if (this.authService.login(valueForm)) {
+  onSubmit(form) {
+    if (this.authService.login(form.value)) {
       this.route.navigate(['/']);
+      form.reset();
     }
   }
 }
