@@ -8,12 +8,14 @@ import {AuthService} from '../service/auth.service';
 })
 export class GroupMessengerComponent implements OnInit {
   members = [];
+  auth: object;
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit(): void {
     this.members = [{name: 'hai', psw: '123123'}];
+    this.auth = this.authService.auth;
   }
   search(keyword) {
     this.members = this.authService.members.filter( res => {

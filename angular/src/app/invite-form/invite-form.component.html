@@ -2,12 +2,20 @@
   <h2>Join to our chat</h2>
   <p>Set your nick name in group message</p>
   <div class="text-danger" *ngIf="message">{{ message }}</div>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
-      <input ngModel type="text" placeholder="Type your nickname" required name="name">
+      <input ngModel type="text" placeholder="Type your nickname"
+             required name="name" #name="ngModel">
+    </div>
+    <div class="text-danger" *ngIf="name.touched && !name.valid">
+      Name field is require.
     </div>
     <div class="form-group">
-      <input ngModel type="password" placeholder="Type your password" name="psw">
+      <input ngModel type="password" placeholder="Type your password"
+             required name="psw" #psw='ngModel'>
+    </div>
+    <div class="text-danger" *ngIf="psw.touched && !psw.valid">
+      Name field is require.
     </div>
     <span><a [routerLink]="['/register']">Not has any account?</a></span><br>
     <button type="submit">Join us</button>
