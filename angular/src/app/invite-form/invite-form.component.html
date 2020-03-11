@@ -15,7 +15,7 @@
              required name="psw" #psw='ngModel'>
     </div>
     <div class="text-danger" *ngIf="psw.touched && !psw.valid">
-      Name field is require.
+      Password field is require.
     </div>
     <span><a [routerLink]="['/register']">Not has any account?</a></span><br>
     <button type="submit">Join us</button>

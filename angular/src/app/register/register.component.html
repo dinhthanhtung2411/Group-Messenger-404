@@ -1,16 +1,55 @@
 <div id="container">
   <h2>Join to our chat</h2>
   <p>Set your nick name in group message</p>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
-      <input ngModel type="text" placeholder="Type your nickname" required name="name">
+      <input ngModel type="text" placeholder="Type your nickname"
+             required minlength="4"
+             name="name" #name="ngModel">
+    </div>
+    <div class="text-danger" *ngIf="name.touched && !name.valid">
+      <div class="text-danger" *ngIf="name.errors.required">
+        Name field is require.
+      </div>
+      <div class="text-danger" *ngIf="name.errors.minlength">
+        At least 3 characters in this field.
+      </div>
     </div>
     <div class="form-group">
-      <input ngModel type="password" placeholder="Type your password" name="psw">
+      <input ngModel type="password" placeholder="Type your password"
+             required minlength="3"
+             name="psw" #psw="ngModel">
+    </div>
+    <div class="text-danger" *ngIf="psw.touched && !psw.valid">
+      <div class="text-danger" *ngIf="psw.errors.required">
+        Password field is require.
+      </div>
+      <div class="text-danger" *ngIf="psw.errors.minlength">
+        At least 3 characters in this field.
+      </div>
     </div>
     <div class="form-group">
-      <input ngModel type="password" placeholder="Repeat your password" name="repeat-psw">
+      <input ngModel type="password" placeholder="Repeat your password"
+             name="repeat-psw" required minlength="3"
+             #repeat_psw="ngModel">
     </div>
-    <button type="submit">Register</button>
+    <div class="text-danger"
+         *ngIf="repeat_psw.touched && repeat_psw.invalid">
+      <div class="text-danger" *ngIf="repeat_psw.errors.required">
+        Repeat field is require.
+      </div>
+      <div class="text-danger" *ngIf="repeat_psw.errors.minlength">
+        At least 3 characters in this field.
+      </div>
+    </div>
+    <div *ngIf="repeat_psw.touched && repeat_psw.valid">
+      <div class="text-danger"
+        *ngIf="!(repeat_psw.value === psw.value)">
+        Your repeat password is wrong.
+      </div>
+    </div>
+    <button type="submit"
+            [disabled]="form.invalid || !(repeat_psw.value === psw.value)">
+            Register</button>
   </form>
 </div>
